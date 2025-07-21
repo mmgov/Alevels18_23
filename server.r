@@ -1,6 +1,6 @@
 library("DT")
 library("tidyverse")
-
+library("cpp11")
 
 
 
@@ -122,31 +122,6 @@ function(input, output) {
 
 
 
-
-# 
-# output$chart<-renderPlot({ 
-# alc %>% 
-#     group_by(SCHOOLTYPE)%>%
-#     summarise(Average = round(mean(TALLPPE_ALEV_1618),1))%>%
-#     ggplot(aes(
-#       x = fct_reorder(SCHOOLTYPE, Average, .desc = TRUE),
-#       y= Average
-#       ,fill = SCHOOLTYPE))+ 
-#     geom_bar(position="dodge",stat="identity")+
-#   ##  scale_fill_discrete() + 
-#     coord_flip() + theme(axis.text.x = element_text(angle = 0, size = 15),legend.position = "none", axis.title = element_text(size = 14)) + geom_text(aes(label=Average), position=position_dodge(width=0.96) ## was 0.96
-#     , vjust=+0.5,hjust=-0.1,size=7)+ ## was 
-#     scale_y_continuous(limits = c(0,40)) +
-#     ggtitle("Mean TALLPPE_ALEV_1618 by School Type") +
-#     theme(plot.title = element_text(hjust = 0.5)) +
-#     theme (plot.title = element_text(size = 17)) +
-#     theme (axis.text=element_text(size=15)) +
-#     ylab("Mean TALLPPE_ALEV_1618") + xlab("School Type")
-# })
-
-# alcd<-alc %>%
-#   mutate(MEAN = 31.8) %>% 
-#   select('SCHNAME','TALLPPE_ALEV_1618','MEAN','SCHOOLTYPE')
 
 
 
