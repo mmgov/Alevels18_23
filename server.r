@@ -7,9 +7,7 @@ library("cpp11")
 
 
 
-
-
-alc<-read_csv("./england_ks5final.csv", na = c('*','','na')) %>% 
+alc2223<-read_csv("./england_ks5final2223.csv", na = c('*','','na')) %>% 
   select('URN','REGION','ESTAB','SCHNAME','TALLPPE_ALEV_1618','TALLPUP_ALEV_1618','TALLPPEGRD_ALEV_1618','NFTYPE/FESITYPE','TOWN','PCON_NAME')%>%
   rename(SCHOOLTYPE = 'NFTYPE/FESITYPE')%>% 
   filter (
@@ -25,27 +23,6 @@ super_sleepers <- data.frame(ACRONYM, SCHOOLTYPE)
 
 
 function(input, output) {
-
-  
-
-
-
-
-
-
-                                                                                 
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 alc1819<-read_csv("./england_ks5final1819.csv", na = c('*','','na')) %>% 
@@ -76,7 +53,7 @@ alc2122<-read_csv("./england_ks5final2122.csv", na = c('*','','na')) %>%
 
 
 
-final<-left_join(alc,(alc1819 %>% select(URN,'18/19','18/19 Grade')), by = "URN") %>% 
+final<-left_join(alc2223,(alc1819 %>% select(URN,'18/19','18/19 Grade')), by = "URN") %>% 
   left_join(.,(alc2122 %>% select(URN,'21/22','21/22 Grade')), by = "URN")
 
 
